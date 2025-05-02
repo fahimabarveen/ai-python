@@ -30,7 +30,7 @@ def main():
         ## Initialize prompt with system message
         prompt=[
                 SystemMessage("You are a helpful AI assistant that answers questions.")
-           ]
+            ]
 
         # Loop until the user types 'quit'
         while True:
@@ -45,8 +45,8 @@ def main():
             # Get a chat completion
             prompt.append(UserMessage(input_text))
             response = chat.complete(
-                model=model_deployment,
-                messages=prompt)
+            model=model_deployment,
+            messages=prompt)
             completion = response.choices[0].message.content
             print(completion)
             prompt.append(AssistantMessage(completion))
